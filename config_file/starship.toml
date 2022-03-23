@@ -1,0 +1,18 @@
+# 表示される項目の順序の設定(基本デフォルトで良い)
+format = """\
+    \\[[env_name](bold blue)\\] \
+    $directory\
+    $git_branch\
+    $git_status\
+    $line_break\
+    $character\
+"""
+
+# テキストが入力される場所を示す文字の設定
+[character]
+success_symbol = "[\\$](bold green)"
+error_symbol ="[\\$](bold red)"
+
+# 時間の設定
+[time]
+disabled = true # 非表示に設定すると、必ず一行になる
