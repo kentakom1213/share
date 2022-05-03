@@ -43,7 +43,9 @@ def main():
     arr = [list(map(int, input().split())) for _ in range(9)]
 
     for ans in solve(arr, 0):
-        print(*ans, sep="\n", end="\n\n")
+        print()
+        for row in ans:
+            print(*row)
 
     solve(arr, 0)
 

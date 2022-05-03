@@ -150,17 +150,19 @@ def pprint(arr):
         print(*row)
 
 
-def test():
-    random.seed(0)
+def test(n):
+    if n == 0:
+        return
 
     f = random_field_maker()
     pprint(f)
     print()
 
-    n = int(input())
+    n = int(input("the number of brank : "))
     plob = make_problem_from_field(f, n)
     pprint(plob)
-
+    test(n-1)
 
 if __name__ == "__main__":
-    test()
+    random.seed(0)
+    test(5)
