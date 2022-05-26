@@ -5,7 +5,7 @@ set number
 " シンタックスハイライト
 syntax enable
 " カラーマップ
-colorscheme parabola
+" colorscheme parabola
 
 " カレント行ハイライト
 set cursorline
@@ -22,11 +22,23 @@ set shiftwidth=4
 "set smartindent
 set cindent
 
+" 移動コマンド
+nnoremap <C-a> 0a
+nnoremap <C-e> $a
+
+" ターミナルを開く
+set shell=zsh
+
+nnoremap <C-@> :tab<Space>term<Return>
+tnoremap <C-k> <C-w>gt
+tnoremap <C-j> <C-w>gT
+tnoremap <C-q> <C-c><C-d>
+
 " タブ移動
 nnoremap <C-k> gt
 nnoremap <C-j> gT
 nnoremap <C-t> :tabnew<Space>
-nnoremap <C-w> :q<Return>
+nnoremap <C-q> :q<Return>
 
 " 保存
 nnoremap <C-s> :w<Return>
@@ -34,11 +46,11 @@ inoremap <C-s> <Esc>:w<Return>
 
 
 " かっこの補完
-inoremap { {}<Left>
+" inoremap { {}<Left>
 inoremap {<Enter> {}<Left><CR><ESC><S-o>
-inoremap ( ()<ESC>i
+" inoremap ( ()<ESC>i
 inoremap (<Enter> ()<Left><CR><ESC><S-o>
-inoremap [ []<ESC>i
+" inoremap [ []<ESC>i
 inoremap [<Enter> []<Left><CR><ESC><S-o>
 
 " クリップボードを連携
@@ -81,47 +93,4 @@ set laststatus=2
 autocmd FileType python setl autoindent
 autocmd FileType python setl smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 autocmd FileType python setl tabstop=8 expandtab shiftwidth=4 softtabstop=4
-
-
-""" Rust
-syntax enable
-filetype plugin indent on
-
-" rust auto format
-let g:rustfmt_autosave = 1
-
-" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
-" delays and poor user experience.
-set updatetime=300
-
-" Always show the signcolumn, otherwise it would shift the text each time
-" diagnostics appear/become resolved.
-if has("patch-8.1.1564")
-  " Recently vim can merge signcolumn and number column into one
-  set signcolumn=number
-else
-  set signcolumn=yes
-endif
-
-" Make <CR> auto-select the first completion item and notify coc.nvim to
-" format on enter, <cr> could be remapped by other vim plugin
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-
-""" Plugin
-call plug#begin('~/.vim/plugged')
-    Plug 'prabirshrestha/vim-lsp'
-    Plug 'mattn/vim-lsp-settings'
-    Plug 'rust-lang/rust.vim'
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
-call plug#end()
-
-
-
-" GoTo code navigation.
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-
 
