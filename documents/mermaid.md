@@ -56,6 +56,7 @@ marp: true
 - フローチャート
 - GitGraph
 - ER図
+- ガントチャート
 
 ---
 ## フローチャート
@@ -109,6 +110,22 @@ erDiagram
         int size_mb
     }
 ```
+
+---
+## ガントチャート
+```
+gantt
+    title アプリ開発
+    section ローカル
+    準備            :a1 ,2022-05-27 ,1d
+    開発            :a2 ,after a1 ,3d
+    section サーバ上
+    デプロイ         :b1 ,after a2 ,3d
+    テスト、デバッグ  :b2 ,after b1 ,4d
+    リリース         :b4 ,after b2 ,1d
+```
+
+![h:300](images/gantt.png)
 
 ---
 # どんどん使っていきましょう！
