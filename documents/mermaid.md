@@ -134,3 +134,4 @@ gantt
 - [Mermaid Documentation](https://mermaid-js.github.io/mermaid/#/)
 - [MermaidでER図のスケッチをしたら簡単すぎて衝撃だった - Zenn](https://zenn.dev/kyohei_shibuya/articles/0cafee2a1c1651)
 - [[mermaid] git graphについて - Qiita](https://qiita.com/z6wdc/items/e05ef0ef0a8bef139e52)
+- [Mermaid.js コードでガントチャートを書く 簡易編 - Qiita](https://qiita.com/miriwo/items/7df0024d4098302e5721)
