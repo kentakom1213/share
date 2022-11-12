@@ -7,16 +7,27 @@ footer: ""
 ## うわっ…私のコマンド、遅すぎ…？
 #### Rust再実装コマンドでターミナルをもっと便利に
 
+<br><br>
 ぱうえる（甲本健太）
 
+Github：[@kentakom1213](https://github.com/kentakom1213)
+
 <!-- 
-class: title
-_footer: "[@kentakom1213](https://github.com/kentakom1213)"
+class: title, invert
 -->
 
 ---
 # Rustとは
 
+- C/C++並に速く、安全性が高い言語
+- 主な用途
+  - コマンドラインツール
+  - Webアプリケーション
+  - OSの開発
+
+公式：www.rust-lang.org/ja
+
+![bg right:40% 120%](./images/rust-logo-blk.svg)
 
 
 ---
@@ -114,4 +125,5 @@ _footer: "[@kentakom1213](https://github.com/kentakom1213)"
 
 ### 参考
 - [awsome-alternatievs-in-rust](https://github.com/TaKO8Ki/awesome-alternatives-in-rust)
+
 
