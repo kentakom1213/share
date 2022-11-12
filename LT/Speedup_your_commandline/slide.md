@@ -1,7 +1,7 @@
 ---
 marp: true
 theme: dracula
-footer: ""
+footer: "@kentakom1213"
 ---
 
 ## うわっ…私のコマンド、遅すぎ…？
@@ -47,14 +47,15 @@ class: title, invert
 
 - **高速！**
   `README.md`（7569個）を計測
-    - `find`：8.0 sec
-    - `fd`：0.75 sec
+  - `find`：8.0 sec
+  - `fd`：0.75 sec
 
 - デフォルトで色付けあり
 - デフォルトで`.gitignore`を無視
 
 公式：github.com/sharkdp/fd
 
+<!-- _footer: "" -->
 
 ---
 ![bg 80%](./images/find.png)
@@ -67,8 +68,8 @@ class: title, invert
 
 - **100倍程度高速！**
   1434ファイルの中から`"アルゴリズム"`という文字列を検索
-  - `grep`：0.062 sec
-  - `ripgrep`：3.8 sec
+  - `grep`：3.8 sec
+  - `ripgrep`：0.062 sec
 
 - みやすい！
 
@@ -115,6 +116,7 @@ class: title, invert
 ![bg 80%](./images/cat.png)
 ![bg 80%](./images/bat.png)
 
+<!-- _footer: "" -->
 
 ---
 # その他おすすめツール
