@@ -1,17 +1,18 @@
 ---
 marp: true
 theme: dracula
-footer: "[@kentakom1213](https://github.com/kentakom1213/)"
+footer: ""
 ---
-
-<!--
-  class: title
--->
 
 ## うわっ…私のコマンド、遅すぎ…？
 #### Rust再実装コマンドでターミナルをもっと便利に
 
 ぱうえる（甲本健太）
+
+<!-- 
+class: title
+_footer: "[@kentakom1213](https://github.com/kentakom1213)"
+-->
 
 ---
 # Rustとは
@@ -21,11 +22,6 @@ footer: "[@kentakom1213](https://github.com/kentakom1213/)"
 ---
 # 今回紹介するコマンドたち
 
-<!-- - `find` → `fd`：ファイルを探す
-- `grep` → `ripgrep`：ファイルを検索する
-- `ls` → `exa`：ディレクトリの中を見る
-- `cat` → `bat`：ファイルの中を見る -->
-
 | 前 | 後 | コマンドの意味 |
 | :-: | :-: | :- |
 | find | fd | ファイルを探す |
@@ -33,17 +29,20 @@ footer: "[@kentakom1213](https://github.com/kentakom1213/)"
 | ls | exa | ディレクトリの中を見る |
 | cat | bat | ファイルの中を見る |
 
+
 ---
 # `find` → `fd`
 ファイルを探す
 
 - **高速！**
   `README.md`（7569個）を計測
-    `find`：8.0 sec
-    `fd`：0.75 sec
+    - `find`：8.0 sec
+    - `fd`：0.75 sec
 
 - デフォルトで色付けあり
 - デフォルトで`.gitignore`を無視
+
+公式：github.com/sharkdp/fd
 
 
 ---
@@ -57,22 +56,23 @@ footer: "[@kentakom1213](https://github.com/kentakom1213/)"
 
 - **100倍程度高速！**
   1434ファイルの中から`"アルゴリズム"`という文字列を検索
-  `grep`：0.062 sec
-  `ripgrep`：3.8 sec
+  - `grep`：0.062 sec
+  - `ripgrep`：3.8 sec
 
 - みやすい！
+
+公式：github.com/BurntSushi/ripgrep
+
 
 ---
 ## `grep`コマンド
 ![h:500](./images/grep.png)
 
-<!-- _footer: "" -->
 
 ---
 ## `ripgrep`コマンド
 ![h:500](images/ripgrep.png)
 
-<!-- _footer: "" -->
 
 ---
 # `ls` → `exa`
@@ -81,6 +81,9 @@ footer: "[@kentakom1213](https://github.com/kentakom1213/)"
 - デフォルトで色付けあり
 - 絵文字を設定できる:smile:
 - tree形式でも表示できる
+
+公式：github.com/ogham/exa
+
 
 ---
 ![bg 90%](./images/ls.png)
@@ -94,7 +97,21 @@ footer: "[@kentakom1213](https://github.com/kentakom1213/)"
 - まるでエディタのようにファイルを見れるコマンド
 - デフォルトでシンタックスハイライトあり
 
+公式：github.com/sharkdp/bat
+
+
 ---
-![bg 70%](./images/cat.png)
-![bg 70%](./images/bat.png)
+![bg 80%](./images/cat.png)
+![bg 80%](./images/bat.png)
+
+
+---
+# その他おすすめツール
+
+- [xcp](https://github.com/tarka/xcp)：`cp`コマンドの再実装
+- [delta](https://github.com/dandavison/delta)：`diff`コマンドの再実装
+- [Starship](https://starship.rs/ja-jp/)：コマンドラインを可愛くできるツール
+
+### 参考
+- [awsome-alternatievs-in-rust](https://github.com/TaKO8Ki/awesome-alternatives-in-rust)
 
