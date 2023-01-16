@@ -48,6 +48,15 @@ SSHとは**Secure Shell**（安全なシェル）の略称であり、安全に�
 $ ssh -i {秘密鍵} {ユーザ名}@{接続先のIPアドレス}
 ```
 
+ssh-configを使う
+
+```
+Host {登録名}
+    HostName ocw.nagoya-u.jp  # 接続先
+    User {ユーザ名}
+    IdentityFile {秘密鍵のパス}
+```
+
 
 ## SSH接続の流れ
 
@@ -76,6 +85,8 @@ $ ssh -i {秘密鍵} {ユーザ名}@{接続先のIPアドレス}
 サーバの公開鍵を検証し、**手動で**検証を行う
 → `Are you sure you want to continue connecting (yes/no)?`
 ローカルの`known_hosts`ファイルにその情報を保存する。
+
+（他にも`ssh-keyscan`コマンドを用いるなどの方法もある）
 <hr>
 
 #### 2回目以降
@@ -113,6 +124,14 @@ $ ssh -i {秘密鍵} {ユーザ名}@{接続先のIPアドレス}
 c.f. [電子署名](https://ja.wikipedia.org/wiki/%E9%9B%BB%E5%AD%90%E7%BD%B2%E5%90%8D)
 
 
+## 4. データを暗号化して通信
+
+- `2. セッションキーの生成`で生成された鍵を使って暗号化通信をする
+- 高速な暗号化、復号が可能な**共通鍵暗号**を使う
+
+![h:350](images/about_ssh.png)
+
+
 ## SSHのログを見てみよう
 
 `ssh`コマンドに`-v`オプションをつけると接続の際のログを確認できる
@@ -130,8 +149,16 @@ c.f. [電子署名](https://ja.wikipedia.org/wiki/%E9%9B%BB%E5%AD%90%E7%BD%B2%E5
   - 比較的最近開発された方法
 
 
-同じ長さの鍵では、ecdsaの方が強度が高い！
-→ 最近はecdsaが推奨されてます！！
+同じ長さの鍵では、ecdsaの方が強度が高い
+→ 最近はecdsaが推奨されています！
+
+
+## まとめ
+
+- SSHは`公開鍵暗号`、`共通鍵暗号`、`電子署名`、`鍵交換アルゴリズム`
+  といった暗号技術をフルに使ったすごい技術！
+- サーバにSSH接続をするときは、より安全な`公開鍵認証`を使おう！
+
 
 ## 参考
 
@@ -141,4 +168,3 @@ c.f. [電子署名](https://ja.wikipedia.org/wiki/%E9%9B%BB%E5%AD%90%E7%BD%B2%E5
   https://www.openssh.com/
 - Understanding SSH Workflow
   https://medium.com/@hellomudit/understanding-ssh-workflow-66a0e8d4bf65
-
