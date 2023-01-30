@@ -1,4 +1,3 @@
-
 use colored::Colorize;
 use sudoku::sudoku::Sudoku;
 

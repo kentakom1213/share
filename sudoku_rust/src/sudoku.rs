@@ -24,7 +24,10 @@ impl Sudoku {
             }
         }
 
-        Sudoku { field, answer: [[0; 9]; 9] }
+        Sudoku {
+            field,
+            answer: [[0; 9]; 9],
+        }
     }
 
     /// ## solve
@@ -51,9 +54,8 @@ impl Sudoku {
             return;
         }
 
-        let (i, j) = (cur/9, cur%9);
+        let (i, j) = (cur / 9, cur % 9);
         if self.field[i][j] == 0 {
-
             // 順に代入する
             for n in 1..=9 {
                 // 代入した際に条件を満たすかどうか
@@ -67,7 +69,7 @@ impl Sudoku {
                     is_ok &= self.field[t][j] != n;
 
                     // --- ブロック ---
-                    let (r, c) = (i/3*3 + t/3, j/3*3 + t%3);
+                    let (r, c) = (i / 3 * 3 + t / 3, j / 3 * 3 + t % 3);
                     is_ok &= self.field[r][c] != n;
                 }
 
@@ -105,7 +107,6 @@ impl Sudoku {
                 (8, _) => println!("┗━━━┷━━━┷━━━┻━━━┷━━━┷━━━┻━━━┷━━━┷━━━┛"),
                 (_, 2) => println!("┣━━━┿━━━┿━━━╋━━━┿━━━┿━━━╋━━━┿━━━┿━━━┫"),
                 _ => println!("┠───┼───┼───╂───┼───┼───╂───┼───┼───┨"),
-
             }
         }
     }
